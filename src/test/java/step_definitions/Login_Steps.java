@@ -1,46 +1,38 @@
 package step_definitions;
 
 import browser.BrowserManager;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import static com.microsoft.playwright.options.AriaRole.*;
-import static org.testng.Assert.assertEquals;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import pages.LoginPage;
 
 public class Login_Steps {
 
-    public BrowserManager browserManager;
-    public String alertText;
+    private static final Logger log = LoggerFactory.getLogger(Login_Steps.class);
+    private final LoginPage loginPage;
 
-    public Login_Steps (BrowserManager browserManager) {
-        this.browserManager = browserManager;
+    public Login_Steps (LoginPage loginPage) {
+        this.loginPage = loginPage;
     }
 
     @When("I type a username {word}")
     public void i_type_a_username_webdriver(String username) {
-        browserManager.page.getByRole(TEXTBOX, new Page.GetByRoleOptions().setName("Username")).fill(username);
+        loginPage.typeUserName(username);
     }
 
     @When("I type a password {word}")
     public void i_type_a_password_webdriver123(String password) {
-        browserManager.page.getByRole(TEXTBOX, new Page.GetByRoleOptions().setName("Password")).fill(password);
+        loginPage.typePassword(password);
     }
 
     @When("I click on the login button")
     public void i_click_on_the_login_button() {
-        browserManager.page.onceDialog(dialog -> {
-            alertText = dialog.message();
-            dialog.accept();
-        });
-
-        browserManager.page.getByRole(BUTTON, new Page.GetByRoleOptions().setName("Login")).click();
+        loginPage.clickLoginButton();
     }
 
     @Then("I should be presented with an alert box which contains text {string}")
     public void i_should_be_presented_with_an_alert_box_which_contains_text(String expectedAlertText) {
-        assertEquals(alertText, expectedAlertText, "The alert text does not match the expected alert box text. " +
-                "\nActual Alert Text: " + alertText + "\nExpected Alert Text: " + expectedAlertText);
+        loginPage.verifyUserValidationStatus(expectedAlertText);
     }
 }

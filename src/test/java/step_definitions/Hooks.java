@@ -38,5 +38,6 @@ public class Hooks {
     @AfterAll
     public static void afterAll() {
         System.out.println("Finished executing the test suite...");
+        BrowserManager.tearDownAll();
     }
 }

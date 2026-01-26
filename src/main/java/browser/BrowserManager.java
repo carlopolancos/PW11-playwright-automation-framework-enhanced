@@ -16,12 +16,24 @@ import java.util.logging.Logger;
 
 public class BrowserManager {
 
-    public Playwright playwright;
-    public Browser browser;
-    public BrowserContext browserContext;
-    public Page page;
+    private static final ThreadLocal<Playwright> playwright = new ThreadLocal<>();
+    private static final ThreadLocal<Browser> browser = new ThreadLocal<>();
+    private static final ThreadLocal<BrowserContext> browserContext = new ThreadLocal<>();
+    private static final ThreadLocal<Page> page = new ThreadLocal<>();
     public Properties properties;
     private static final Logger logger = Logger.getLogger(BrowserManager.class.getName());
+
+    public BrowserContext  getBrowserContext(){
+        return browserContext.get();
+    }
+
+    public Page getPage() {
+        return page.get();
+    }
+
+    public void setPage(Page page) {
+        BrowserManager.page.set(page);
+    }
 
     public BrowserManager() {
         properties = new Properties();
@@ -36,47 +48,69 @@ public class BrowserManager {
     }
 
     public byte[] takeScreenshot() {
-        if (page != null) {
-            return page.screenshot();
+        if (page.get() != null) {
+            return page.get().screenshot();
         }
         return new byte[0];
     }
 
     public void setUp() {
         logger.info("Setting up Playwright...");
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) screenSize.getWidth();
-        int height = (int) screenSize.getHeight();
+//        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//        int width = (int) screenSize.getWidth();
+//        int height = (int) screenSize.getHeight();
         List<String> arguments =  new ArrayList<>();
         arguments.add("--start-maximized");
+        int navigationTimeout = Integer.parseInt(properties.getProperty("navigation.timeout", "30000"));
+        int actionTimeout = Integer.parseInt(properties.getProperty("action.timeout", "15000"));
 
-        playwright = Playwright.create();
-        String browserType = properties.getProperty("browser", "chromium");
-        switch (browserType.toLowerCase()) {
-            case "chromium":
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
-                break;
-            case "firefox":
-                browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
-                break;
-            default:
-                logger.warning("Unknown browser type: " + browserType + ". Defaulting to chromium.");
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
-                break;
+        try {
+            playwright.set(Playwright.create());
+            String browserType = properties.getProperty("browser", "chromium");
+            switch (browserType.toLowerCase()) {
+                case "chromium":
+                    browser.set(playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments)));
+                    break;
+                case "firefox":
+                    browser.set(playwright.get().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments)));
+                    break;
+                default:
+                    logger.warning("Unknown browser type: " + browserType + ". Defaulting to chromium.");
+                    browser.set(playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments)));
+                    break;
+            }
+            browserContext.set(browser.get().newContext(new Browser.NewContextOptions().setViewportSize(null)));
+            page.set(browserContext.get().newPage());
+            page.get().setDefaultNavigationTimeout(navigationTimeout);
+            page.get().setDefaultTimeout(actionTimeout);
+            logger.info("Playwright setup complete");
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Failed to setup Playwright!", e);
         }
-        browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
-        page  = browserContext.newPage();
-        logger.info("Playwright setup complete");
     }
 
     public void tearDown() {
+
+        System.out.println("Tearing down Playwright...");
+        if (browser.get() != null) {
+            for (BrowserContext ctx : browser.get().contexts()) {
+                for (Page p : ctx.pages()) p.close();
+                ctx.close();
+            }
+            browser.get().close();
+        }
+        if (playwright.get() != null) playwright.get().close();
+        System.out.println("Playwright teardown complete");
+    }
+
+    public static void tearDownAll() {
         logger.info("Tearing down Playwright...");
         try {
-            if (playwright != null) {
-                playwright.close();
+            if (playwright.get() != null) {
+                playwright.get().close();
             }
         } catch (Exception e) {
-            System.err.println("Error during teardown: " + e.getMessage());
+            logger.log(Level.SEVERE, "Failed to close Playwright resources!", e);
         }
         logger.info("Playwright teardown complete");
     }

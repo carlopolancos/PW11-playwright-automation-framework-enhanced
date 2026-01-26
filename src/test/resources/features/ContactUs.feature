@@ -29,11 +29,12 @@ Feature: WebdriverUniversity.com - Contact Us Page
     And I click the submit button
     Then I should be presented with a successful contact us submission message
 
+  @randomData
   Scenario: Valid Contact Us Form Submission - Using Random Data
     And I type a random firstname
     And I type a random lastname
     And I enter a random email address
-    And I type a comment
+    And I type a random comment
     And I click the submit button
     Then I should be presented with a successful contact us submission message
 
