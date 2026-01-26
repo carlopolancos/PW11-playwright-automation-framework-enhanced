@@ -66,7 +66,12 @@ public class BrowserManager {
 
         try {
             playwright.set(Playwright.create());
-            String browserType = properties.getProperty("browser", "chromium");
+
+            String browserType = System.getProperty("BROWSER");
+            if (browserType == null || browserType.isEmpty()) {
+                browserType = properties.getProperty("browser", "chromium");
+            }
+
             switch (browserType.toLowerCase()) {
                 case "chromium":
                     browser.set(playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments)));
