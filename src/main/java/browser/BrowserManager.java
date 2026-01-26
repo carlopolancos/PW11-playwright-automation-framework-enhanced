@@ -3,6 +3,8 @@ package browser;
 import com.microsoft.playwright.*;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BrowserManager {
 
@@ -16,19 +18,25 @@ public class BrowserManager {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int) screenSize.getWidth();
         int height = (int) screenSize.getHeight();
+        List<String> arguments =  new ArrayList<>();
+        arguments.add("--start-maximized");
 
-        Playwright playwright = Playwright.create();
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-        browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(width, height));
+        playwright = Playwright.create();
+        browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setArgs(arguments));
+        browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         page  = browserContext.newPage();
         System.out.println("Playwright setup complete");
     }
 
     public void tearDown() {
         System.out.println("Tearing down Playwright...");
-        if (page != null) page.close();
-        if (browser != null) browser.close();
-        if (playwright != null) playwright.close();
+        try {
+            if (playwright != null) {
+                playwright.close();
+            }
+        } catch (Exception e) {
+            System.err.println("Error during teardown: " + e.getMessage());
+        }
         System.out.println("Playwright teardown complete");
     }
 }

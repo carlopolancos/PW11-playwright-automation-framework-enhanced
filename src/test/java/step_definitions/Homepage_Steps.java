@@ -18,8 +18,8 @@ public class Homepage_Steps {
         this.browserManager = browserManager;
     }
 
-    @Given("I navigate to the webdriveruniversity homeage")
-    public void i_navigate_to_the_webdriveruniversity_homeage() {
+    @Given("I navigate to the webdriveruniversity homepage")
+    public void i_navigate_to_the_webdriveruniversity_homepage() {
         browserManager.page.navigate("https://www.webdriveruniversity.com");
     }
 
@@ -27,6 +27,14 @@ public class Homepage_Steps {
     public void i_click_on_the_contact_us_button() {
         browserManager.page = browserManager.page.waitForPopup(() -> {
             browserManager.page.getByRole(LINK, new Page.GetByRoleOptions().setName("CONTACT US Contact Us Form")).click();
+        });
+        browserManager.page.bringToFront();
+    }
+
+    @When("I click on the login portal button")
+    public void i_click_on_the_login_portal_button() {
+        browserManager.page = browserManager.page.waitForPopup(() -> {
+            browserManager.page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("LOGIN PORTAL Login Portal Are")).click();
         });
         browserManager.page.bringToFront();
     }
