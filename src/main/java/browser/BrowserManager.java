@@ -13,6 +13,13 @@ public class BrowserManager {
     public BrowserContext browserContext;
     public Page page;
 
+    public byte[] takeScreenshot() {
+        if (page != null) {
+            return page.screenshot();
+        }
+        return new byte[0];
+    }
+
     public void setUp() {
         System.out.println("Setting up Playwright...");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
