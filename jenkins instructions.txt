@@ -1,4 +1,6 @@
 -run Jenkins (java -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar jenkins.war)
+-install plugin cucumber reports
+
 -free form project type + name
 -from directory, copy folder path
 
@@ -12,7 +14,6 @@
 --Execute Windows batch command
 ---mvn clean compile test -Dcucumber.filter.tags="(@%TAG% and (not @ignore))" -Ddataproviderthreadcount=%THREAD_COUNT% -DBROWSER=%BROWSER%
 
--install plugin cucumber reports
 -add post build setup
 **/target/*.json
 
