@@ -35,4 +35,11 @@ public class HomePage extends BasePage {
         }));
         getBrowserManager().getPage().bringToFront();
     }
+
+    public void clickToDoListLink() {
+        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
+            waitAndClickByRole("LINK", "TO DO LIST Task1 [ ] - Task2");
+        }));
+        getBrowserManager().getPage().bringToFront();
+    }
 }

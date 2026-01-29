@@ -32,4 +32,9 @@ public class Homepage_Steps {
     public void i_click_on_the_button_clicks_link() {
         homePage.clickButtonClicksLink();
     }
+
+    @When("I click on the to do list link")
+    public void i_click_on_the_to_do_list_link() {
+        homePage.clickToDoListLink();
+    }
 }
