@@ -28,4 +28,11 @@ public class HomePage extends BasePage {
         }));
         getBrowserManager().getPage().bringToFront();
     }
+
+    public void clickButtonClicksLink() {
+        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
+            waitAndClickByRole("LINK", "BUTTON CLICKS WebElement");
+        }));
+        getBrowserManager().getPage().bringToFront();
+    }
 }

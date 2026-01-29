@@ -11,8 +11,8 @@ Feature: WebdriverUniversity.com - Login Page
     Examples:
       | username  | password     | expectedAlertText    |
       | webdriver | webdriver123 | validation succeeded |
-      | webdriver | Password123  | validation failed    |
     @smoke
     Examples:
       | username  | password     | expectedAlertText    |
       | webdriver | webdriver123 | validation succeeded |
+      | webdriver | Password123  | validation failed    |

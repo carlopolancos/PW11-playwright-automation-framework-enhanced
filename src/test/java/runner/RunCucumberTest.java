@@ -26,7 +26,9 @@ import java.util.logging.XMLFormatter;
 //        tags = "@randomData and not @ignore",
 //        tags = "@login and not @ignore",
 //        tags = "@contact-us and not @ignore",
-        tags = "@regression and not @ignore",
+//        tags = "@regression and not @ignore",
+//        tags = "@smoke and not @ignore",
+        tags = "@button-clicks and @smoke and not @ignore",
         plugin = {"pretty", "json:target/cucumber.json",
         "html:target/cucumber-report.html"}
 )

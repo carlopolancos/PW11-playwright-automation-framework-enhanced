@@ -1,7 +1,7 @@
 @regression @contact-us
 Feature: WebdriverUniversity.com - Contact Us Page
 
-  Background: Pre Conditions=
+  Background: Pre Conditions
     Given I navigate to the webdriveruniversity homepage
     When I click on the contact us button
 

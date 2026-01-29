@@ -1,6 +1,5 @@
 package step_definitions;
 
-import browser.BrowserManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.slf4j.Logger;
@@ -9,7 +8,6 @@ import pages.LoginPage;
 
 public class Login_Steps {
 
-    private static final Logger log = LoggerFactory.getLogger(Login_Steps.class);
     private final LoginPage loginPage;
 
     public Login_Steps (LoginPage loginPage) {

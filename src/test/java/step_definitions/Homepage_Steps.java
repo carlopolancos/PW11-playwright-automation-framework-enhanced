@@ -27,4 +27,9 @@ public class Homepage_Steps {
     public void i_click_on_the_login_portal_button() {
         homePage.clickLoginButton();
     }
+
+    @When("I click on the button clicks link")
+    public void i_click_on_the_button_clicks_link() {
+        homePage.clickButtonClicksLink();
+    }
 }

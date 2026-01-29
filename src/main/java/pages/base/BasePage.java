@@ -19,6 +19,11 @@ public class BasePage {
         return browserManager;
     }
 
+    public void waitAndClickByName(String name) {
+        Locator element = browserManager.getPage().getByText(name, new Page.GetByTextOptions().setExact(true));
+        element.click();
+    }
+
     public void waitAndClickByRole(String role, String name) {
         Locator element = browserManager.getPage().getByRole(AriaRole.valueOf(role.toUpperCase()), new Page.GetByRoleOptions().setName(name));
         element.click();
