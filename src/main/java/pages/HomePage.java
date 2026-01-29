@@ -48,4 +48,8 @@ public class HomePage extends BasePage {
     public void clickChoiceLink() {
         clickAndOpenNewPage("DROPDOWN, CHECKBOXE(S) & RADIO BUTTON(S)");
     }
+
+    public void clickAjaxLoaderLink() {
+        clickAndOpenNewPage("AJAX LOADER");
+    }
 }
