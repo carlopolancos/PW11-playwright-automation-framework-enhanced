@@ -26,7 +26,8 @@ public class ButtonClicksPage extends BasePage {
     }
 
     public void verifyClickedButton(String modalHeader) {
-        String modalHeaderContent = getBrowserManager().getPage().locator(".modal-title").filter(new Locator.FilterOptions().setHasText(modalHeader)).innerText();
+        String modalHeaderContent = getLocator(".modal-title")
+                .filter(new Locator.FilterOptions().setHasText(modalHeader)).innerText();
         assertTrue(modalHeaderContent.contains(modalHeader));
     }
 }

@@ -27,24 +27,24 @@ public class ToDoListPage extends BasePage {
     }
 
     public void verifyAddedTask(String taskName) {
-        Locator element = getBrowserManager().getPage().locator("#container > ul > li:nth-child(4)");
+        Locator element = getLocator("#container > ul > li:nth-child(4)");
         assertThat(element).containsText(taskName);
     }
 
     //UPDATE
     public void completeTask(String name) {
-        Locator element = getBrowserManager().getPage().locator("#container > ul > li:nth-child(4)");
+        Locator element = getLocator("#container > ul > li:nth-child(4)");
         element.click();
     }
 
     public void verifyCompletedTask(String taskName) {
-        Locator element = getBrowserManager().getPage().locator("#container > ul > li:nth-child(4)");
+        Locator element = getLocator("#container > ul > li:nth-child(4)");
         assertThat(element).containsClass("completed");
     }
 
     //DELETE
     public void deleteTask(String name) {
-        Locator element = getBrowserManager().getPage().locator("#container > ul > li:nth-child(4)");
+        Locator element = getLocator("#container > ul > li:nth-child(4)");
         element.hover();
         element.locator(".fa-trash").click();
     }

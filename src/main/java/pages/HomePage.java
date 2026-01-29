@@ -44,4 +44,8 @@ public class HomePage extends BasePage {
     public void clickAccordionLink() {
         clickAndOpenNewPage("ACCORDION & TEXT AFFECTS (APPEAR & DISAPPEAR)");
     }
+
+    public void clickChoiceLink() {
+        clickAndOpenNewPage("DROPDOWN, CHECKBOXE(S) & RADIO BUTTON(S)");
+    }
 }

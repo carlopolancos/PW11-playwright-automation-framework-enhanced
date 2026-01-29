@@ -89,7 +89,7 @@ public class ContactUsPage extends BasePage {
 
     public void verifyHeaderText(String message) {
         getBrowserManager().getPage().waitForSelector("//h1 | //body");
-        Locator locator = getBrowserManager().getPage().locator("//h1 | //body");
+        Locator locator = getLocator("//h1 | //body");
         List<String> texts = locator.allInnerTexts();
         String foundText = "";
         boolean found = false;

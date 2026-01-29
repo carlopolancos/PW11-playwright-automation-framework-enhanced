@@ -46,4 +46,9 @@ public class Homepage_Steps {
     public void i_click_on_the_accordion_and_text_effects_link() {
         homePage.clickAccordionLink();
     }
+
+    @When("I click on the choice link")
+    public void i_click_on_the_choice_link() {
+        homePage.clickChoiceLink();
+    }
 }

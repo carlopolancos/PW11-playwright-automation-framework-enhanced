@@ -24,7 +24,7 @@ public class AccordionPage extends BasePage {
     }
 
     public void verifyAppearedTextAfterSeconds(String expectedText, int seconds) {
-        assertThat(getBrowserManager().getPage().locator("#hidden-text")
+        assertThat(getLocator("#hidden-text")
                 .filter(new Locator.FilterOptions().setHasText("LOADING COMPLETE.")))
                 .isVisible(new LocatorAssertions.IsVisibleOptions().setTimeout((seconds*1000) * 3 ));
         waitAndClickByRole("BUTTON", "Keep Clicking! - Text will Appear After 5 Seconds!");

@@ -17,6 +17,10 @@ public class BasePage {
         return browserManager;
     }
 
+    protected Locator getLocator(String selector) {
+        return getBrowserManager().getPage().locator(selector);
+    }
+
     public void waitAndClickByExactName(String name) {
         Locator element = browserManager.getPage().getByText(name, new Page.GetByTextOptions().setExact(true));
         element.click();
