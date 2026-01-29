@@ -6,8 +6,6 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
-import static com.microsoft.playwright.options.AriaRole.LINK;
-
 public class BasePage {
     private final BrowserManager browserManager;
 
@@ -19,7 +17,7 @@ public class BasePage {
         return browserManager;
     }
 
-    public void waitAndClickByName(String name) {
+    public void waitAndClickByExactName(String name) {
         Locator element = browserManager.getPage().getByText(name, new Page.GetByTextOptions().setExact(true));
         element.click();
     }

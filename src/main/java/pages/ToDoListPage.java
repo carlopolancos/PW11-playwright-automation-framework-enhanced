@@ -14,7 +14,6 @@ import static org.testng.Assert.assertTrue;
 
 public class ToDoListPage extends BasePage {
 
-    private Logger logger = Logger.getLogger(ToDoListPage.class.getName());
 
     public ToDoListPage(BrowserManager browserManager) {
         super(browserManager);
@@ -22,8 +21,9 @@ public class ToDoListPage extends BasePage {
 
     //CREATE
     public void createNewTask(String name) {
-        getBrowserManager().getPage().getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Add new todo")).fill(name);
-        getBrowserManager().getPage().getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Add new todo")).press("Enter");
+        Locator element = getBrowserManager().getPage().getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Add new todo"));
+        element.fill(name);
+        element.press("Enter");
     }
 
     public void verifyAddedTask(String taskName) {

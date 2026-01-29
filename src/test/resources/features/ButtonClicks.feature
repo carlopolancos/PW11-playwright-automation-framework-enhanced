@@ -21,5 +21,5 @@ Feature: WebdriverUniversity.com - Button Clicks Page
     Examples:
       | button      | method     | modalHeader                                                |
       | CLICK ME!   | playwright | Congratulations!                                           |
-      | CLICK ME!!  | css        | It’s that Easy!!  Well I think it is.....                  |
+      | CLICK ME!!  | css        | It’s that Easy!!                                           |
       | CLICK ME!!! | xpath      | Well done! the Action Move & Click can become very useful! |

@@ -13,40 +13,35 @@ public class HomePage extends BasePage {
         navigate("https://www.webdriveruniversity.com");
     }
 
-    public void clickContactUsButton () {
+    public void clickAndOpenNewPage(String linkText){
         getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
 //            browserManager.getPage().getByRole(LINK, new Page.GetByRoleOptions().setName("CONTACT US Contact Us Form")).click();
-            waitAndClickByRole("LINK", "CONTACT US Contact Us Form");
+            waitAndClickByRole("LINK", linkText);
         }));
         getBrowserManager().getPage().bringToFront();
     }
 
-    public void clickLoginButton() {
-        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
-//            browserManager.getPage().getByRole(LINK, new Page.GetByRoleOptions().setName("CONTACT US Contact Us Form")).click();
-            waitAndClickByRole("LINK", "LOGIN PORTAL Login Portal Are");
-        }));
-        getBrowserManager().getPage().bringToFront();
+    public void clickContactUsLink() {
+        clickAndOpenNewPage("CONTACT US Contact Us Form");
+    }
+
+    public void clickLoginLink() {
+        clickAndOpenNewPage("LOGIN PORTAL Login Portal Are");
     }
 
     public void clickButtonClicksLink() {
-        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
-            waitAndClickByRole("LINK", "BUTTON CLICKS WebElement");
-        }));
-        getBrowserManager().getPage().bringToFront();
+        clickAndOpenNewPage("BUTTON CLICKS WebElement");
     }
 
     public void clickToDoListLink() {
-        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
-            waitAndClickByRole("LINK", "TO DO LIST Task1 [ ] - Task2");
-        }));
-        getBrowserManager().getPage().bringToFront();
+        clickAndOpenNewPage("TO DO LIST Task1 [ ] - Task2");
     }
 
     public void clickPageObjectModelLink() {
-        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
-            waitAndClickByRole("LINK", "PAGE OBJECT MODEL Design a");
-        }));
-        getBrowserManager().getPage().bringToFront();
+        clickAndOpenNewPage("PAGE OBJECT MODEL Design a");
+    }
+
+    public void clickAccordionLink() {
+        clickAndOpenNewPage("ACCORDION & TEXT AFFECTS (APPEAR & DISAPPEAR)");
     }
 }

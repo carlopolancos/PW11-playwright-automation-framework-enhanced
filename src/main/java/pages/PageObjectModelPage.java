@@ -2,11 +2,7 @@ package pages;
 
 import browser.BrowserManager;
 import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
 import pages.base.BasePage;
-
-import java.util.logging.Logger;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.testng.Assert.assertEquals;
@@ -22,7 +18,7 @@ public class PageObjectModelPage extends BasePage {
     }
 
     public void clickText(String text) {
-        getBrowserManager().getPage().getByText(text, new Page.GetByTextOptions().setExact(true)).click();
+        waitAndClickByExactName(text);
     }
 
     public void verifyCorrectModalHeader(String modalHeader) {
