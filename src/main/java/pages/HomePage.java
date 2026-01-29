@@ -42,4 +42,11 @@ public class HomePage extends BasePage {
         }));
         getBrowserManager().getPage().bringToFront();
     }
+
+    public void clickPageObjectModelLink() {
+        getBrowserManager().setPage(getBrowserManager().getPage().waitForPopup(() -> {
+            waitAndClickByRole("LINK", "PAGE OBJECT MODEL Design a");
+        }));
+        getBrowserManager().getPage().bringToFront();
+    }
 }

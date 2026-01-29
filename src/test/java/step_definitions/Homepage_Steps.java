@@ -1,6 +1,7 @@
 package step_definitions;
 
 import browser.BrowserManager;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.HomePage;
@@ -36,5 +37,10 @@ public class Homepage_Steps {
     @When("I click on the to do list link")
     public void i_click_on_the_to_do_list_link() {
         homePage.clickToDoListLink();
+    }
+
+    @When("I click on the pageObjectModel link")
+    public void i_click_on_the_page_object_model_link() {
+        homePage.clickPageObjectModelLink();
     }
 }
