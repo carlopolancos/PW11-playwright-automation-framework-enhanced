@@ -52,4 +52,8 @@ public class HomePage extends BasePage {
     public void clickAjaxLoaderLink() {
         clickAndOpenNewPage("AJAX LOADER");
     }
+
+    public void clickActionLink() {
+        clickAndOpenNewPage("ACTIONS Can you really handle this challenge?");
+    }
 }

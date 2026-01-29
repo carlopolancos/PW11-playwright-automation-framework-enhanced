@@ -56,4 +56,9 @@ public class Homepage_Steps {
     public void i_click_on_the_ajax_loader_link() {
         homePage.clickAjaxLoaderLink();
     }
+
+    @When("I click on the actions link")
+    public void i_click_on_the_actions_link() {
+        homePage.clickActionLink();
+    }
 }
