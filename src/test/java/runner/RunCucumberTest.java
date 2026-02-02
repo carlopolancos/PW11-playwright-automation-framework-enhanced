@@ -37,6 +37,7 @@ import java.util.logging.XMLFormatter;
 //        tags = "@actions and not @ignore",
 //        tags = "@scrolling-around and not @ignore",
 //        tags = "@popup-and-alerts and not @ignore",
+//        tags = "@iframe and not @ignore",
         plugin = {"pretty", "json:target/cucumber.json",
         "html:target/cucumber-report.html"}
 )
@@ -70,7 +71,7 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
         XmlTest test = new XmlTest(suite); // Creating a new TestNG test and adding it to the suite
         test.setName("Cucumber Test"); //Setting the name of the test
         test.setXmlClasses(Collections.singletonList(new XmlClass(RunCucumberTest.class))); //Add the test case to the class
-        testNG.setUseDefaultListeners(false); // Disbale default listeners, will disbable TestNG reports to be generated
+        testNG.setUseDefaultListeners(false); // Disable default listeners, will disable TestNG reports to be generated
         testNG.setXmlSuites(Collections.singletonList(suite)); //Add the suite to testNG instance
         testNG.run(); // Run TestNG with the configured suite
     }

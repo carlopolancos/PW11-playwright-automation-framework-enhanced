@@ -64,4 +64,8 @@ public class HomePage extends BasePage {
     public void clickPopupAndAlertsLink() {
         clickAndOpenNewPage("POPUP & ALERTS Close those annoying");
     }
+
+    public void clickIframeLink() {
+        clickAndOpenNewPage("IFRAME Practise with inline frame(s)");
+    }
 }

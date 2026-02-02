@@ -4,11 +4,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.PopupAndAlertsPage;
 
-public class PopupAndAlerts_Steps {
+public class PopupAndAlertsSteps {
 
     private final PopupAndAlertsPage popupAndAlertsPage;
 
-    public PopupAndAlerts_Steps(PopupAndAlertsPage popupAndAlertsPage) {
+    public PopupAndAlertsSteps(PopupAndAlertsPage popupAndAlertsPage) {
         this.popupAndAlertsPage = popupAndAlertsPage;
     }
 

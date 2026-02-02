@@ -1,6 +1,7 @@
 package pages.base;
 
 import browser.BrowserManager;
+import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
@@ -21,8 +22,18 @@ public class BasePage {
         return getBrowserManager().getPage().locator(selector);
     }
 
+    protected Locator getLocatorOnFrame(String selector) {
+        return getBrowserManager().getPage().frameLocator("#frame").locator(selector);
+    }
+
     public void waitAndClickByExactName(String name) {
         Locator element = browserManager.getPage().getByText(name, new Page.GetByTextOptions().setExact(true));
+        element.click();
+    }
+
+    public void waitAndClickByExactNameOnIframe(String name) {
+        FrameLocator frame = browserManager.getPage().frameLocator("#frame");
+        Locator element = frame.getByText(name);
         element.click();
     }
 

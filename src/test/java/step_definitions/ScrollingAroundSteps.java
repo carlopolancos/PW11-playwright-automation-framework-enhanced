@@ -4,11 +4,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.ScrollingAroundPage;
 
-public class ScrollingAround_Steps {
+public class ScrollingAroundSteps {
 
     private final ScrollingAroundPage scrollingAroundPage;
 
-    public ScrollingAround_Steps(ScrollingAroundPage scrollingAroundPage) {
+    public ScrollingAroundSteps(ScrollingAroundPage scrollingAroundPage) {
         this.scrollingAroundPage = scrollingAroundPage;
     }
 

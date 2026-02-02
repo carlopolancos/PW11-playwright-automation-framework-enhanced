@@ -1,5 +1,5 @@
 @regression @popup-and-alerts @smoke
-Feature: WebdriverUniversity.com - Actions Page
+Feature: WebdriverUniversity.com - Popup And Alerts Page
 
   Background: Pre Conditions
     Given I navigate to the webdriveruniversity homepage

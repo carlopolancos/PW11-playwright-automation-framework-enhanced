@@ -1,5 +1,5 @@
 @regression @scrolling-around @smoke
-Feature: WebdriverUniversity.com - Actions Page
+Feature: WebdriverUniversity.com - Scrolling Around Page
 
   Background: Pre Conditions
     Given I navigate to the webdriveruniversity homepage
