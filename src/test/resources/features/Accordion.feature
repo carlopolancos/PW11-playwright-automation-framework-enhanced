@@ -8,9 +8,12 @@ Feature: WebdriverUniversity.com - Accordion Page
   Scenario Outline: Verify Instant Accordion Function
     And I click the accordion button '<buttonName>'
     Then The text '<text>' should appear
+    @smoke
     Examples:
       | buttonName         | text                          |
       | Manual Testing     | Manual testing has for        |
+    Examples:
+      | buttonName         | text                          |
       | Cucumber BDD       | Cucumber (BDD) simplifies the |
       | Automation Testing | Automation testing has been   |
 

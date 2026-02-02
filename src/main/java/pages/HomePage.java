@@ -56,4 +56,8 @@ public class HomePage extends BasePage {
     public void clickActionLink() {
         clickAndOpenNewPage("ACTIONS Can you really handle this challenge?");
     }
+
+    public void clickScrollingAroundLink() {
+        clickAndOpenNewPage("SCROLLING AROUND Scrolling Around...");
+    }
 }

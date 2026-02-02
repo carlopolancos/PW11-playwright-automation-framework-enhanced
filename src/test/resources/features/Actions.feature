@@ -16,9 +16,17 @@ Feature: WebdriverUniversity.com - Actions Page
   Scenario Outline: Verify Hover and Click Function
     And On hovered element <hoverElement>, click on element '<clickElement>'
     Then The correct dialog will appear
+    @smoke
     Examples:
       | hoverElement | clickElement           |
       | 1            | > div > a              |
+    Examples:
+      | hoverElement | clickElement           |
       | 2            | > div > a              |
       | 3            | > div > a:nth-child(1) |
       | 3            | > div > a:nth-child(2) |
+
+  Scenario: Verify Clicking Hold Function
+    And Hold click on the element
+    Then Element will have text "Well done! keep holding that click now....." while clicked
+    And Element will have text "Dont release me!!!" when hold click is released

@@ -9,9 +9,12 @@ Feature: WebdriverUniversity.com - PageObjectModel Page
     And I click the tab '<tabName>'
     And I click the '<text>'
     Then The correct modalHeader '<modalHeader>' should appear
+    @smoke
     Examples:
       | tabName      | text            | modalHeader                                                              |
       | Home         | Find Out More!  | Welcome to webdriveruniversity.com                                       |
+    Examples:
+      | tabName      | text            | modalHeader                                                              |
       | Our Products | Special Offers  | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |
       | Our Products | Cameras         | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |
       | Our Products | New Laptops     | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |

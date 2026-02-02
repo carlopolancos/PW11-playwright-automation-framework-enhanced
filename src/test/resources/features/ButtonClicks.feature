@@ -8,16 +8,18 @@ Feature: WebdriverUniversity.com - Button Clicks Page
   Scenario Outline: Verify Button Clicks
     And I click the button '<button>'
     Then I should be presented with a modal which contains text '<modalHeader>'
+    @smoke
     Examples:
       | button      | modalHeader                                                |
       | CLICK ME!   | Congratulations!                                           |
+    Examples:
+      | button      | modalHeader                                                |
       | CLICK ME!!  | It’s that Easy!!  Well I think it is.....                  |
       | CLICK ME!!! | Well done! the Action Move & Click can become very useful! |
 
   Scenario Outline: Verify Button Clicks using Playwright, CSS, or XPath
     And I click the button '<button>' using <method>
     Then I should be presented with a modal which contains text '<modalHeader>'
-  @smoke
     Examples:
       | button      | method     | modalHeader                                                |
       | CLICK ME!   | playwright | Congratulations!                                           |

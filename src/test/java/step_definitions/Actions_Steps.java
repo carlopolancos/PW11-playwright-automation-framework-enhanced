@@ -24,8 +24,13 @@ public class Actions_Steps {
     }
 
     @When("On hovered element {word}, click on element {string}")
-    public void hover_then_click_on_element(String hoverElement, String clickOnElement ) {
+    public void hover_then_click_on_element(String hoverElement, String clickOnElement) {
         actionsPage.hoverThenClickOnElement(hoverElement, clickOnElement);
+    }
+
+    @When("Hold click on the element")
+    public void hold_click_on_the_element() {
+        actionsPage.holdClickOnElement();
     }
 
     @Then("The target will have the correct content {word}")
@@ -41,5 +46,15 @@ public class Actions_Steps {
     @Then("The correct dialog will appear")
     public void the_correct_dialog_will_appear() {
         actionsPage.verifyCorrectDialogAppears();
+    }
+
+    @Then("Element will have text {string} while clicked")
+    public void element_will_have_text_while_clicked(String expectedText) {
+        actionsPage.elementWillHaveTextWhileClicked(expectedText);
+    }
+
+    @Then("Element will have text {string} when hold click is released")
+    public void element_will_have_text_when_hold_click_is_released(String expectedText) {
+        actionsPage.elementWillHaveTextWhenHoldClickIsReleased(expectedText);
     }
 }

@@ -61,4 +61,9 @@ public class Homepage_Steps {
     public void i_click_on_the_actions_link() {
         homePage.clickActionLink();
     }
+
+    @When("I click on the scrolling around link")
+    public void i_click_on_the_scrolling_around_link() {
+        homePage.clickScrollingAroundLink();
+    }
 }

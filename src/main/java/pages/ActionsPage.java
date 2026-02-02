@@ -75,4 +75,19 @@ public class ActionsPage extends BasePage {
                 "\nActual message: " + dialogMessage +
                 "\nExpected message: " + expectedMessage);
     }
+
+    public void holdClickOnElement() {
+        Locator locator = getLocator("#click-box");
+        locator.hover();
+        getBrowserManager().getPage().mouse().down();
+    }
+
+    public void elementWillHaveTextWhileClicked(String expectedText) {
+        assertThat(getLocator("#click-box")).hasText(expectedText);
+    }
+
+    public void elementWillHaveTextWhenHoldClickIsReleased(String expectedText) {
+        getBrowserManager().getPage().mouse().up();
+        assertThat(getLocator("#click-box")).hasText(expectedText);
+    }
 }

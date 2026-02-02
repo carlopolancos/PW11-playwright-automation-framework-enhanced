@@ -9,9 +9,12 @@ Feature: WebdriverUniversity.com - Choice Page
     And The initial selected value for dropdown <dropdown> is <initialValue>
     And I choose <newValue> as its new value for dropdown <dropdown>
     Then The <newValue> should be displayed for dropdown <dropdown>
+    @smoke
     Examples:
       | dropdown | initialValue | newValue |
       | 1        | JAVA         | C#       |
+    Examples:
+      | dropdown | initialValue | newValue |
       | 2        | Eclipse      | TestNG   |
       | 3        | HTML         | JQuery   |
 
