@@ -68,4 +68,8 @@ public class HomePage extends BasePage {
     public void clickIframeLink() {
         clickAndOpenNewPage("IFRAME Practise with inline frame(s)");
     }
+
+    public void clickHiddenElementsLink() {
+        clickAndOpenNewPage("HIDDEN ELEMENTS Reveal and interact with hidden items");
+    }
 }

@@ -38,6 +38,7 @@ import java.util.logging.XMLFormatter;
 //        tags = "@scrolling-around and not @ignore",
 //        tags = "@popup-and-alerts and not @ignore",
 //        tags = "@iframe and not @ignore",
+//        tags = "@hidden-elements and not @ignore",
         plugin = {"pretty", "json:target/cucumber.json",
         "html:target/cucumber-report.html"}
 )

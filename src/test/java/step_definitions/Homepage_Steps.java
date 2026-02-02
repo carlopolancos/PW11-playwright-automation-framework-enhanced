@@ -77,4 +77,9 @@ public class Homepage_Steps {
     public void iClickOnTheIframeLink() {
         homePage.clickIframeLink();
     }
+
+    @When("I click on the hidden elements link")
+    public void iClickOnTheHiddenElementsLink() {
+        homePage.clickHiddenElementsLink();
+    }
 }
