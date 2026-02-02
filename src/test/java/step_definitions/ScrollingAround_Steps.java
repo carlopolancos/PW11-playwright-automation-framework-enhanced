@@ -17,8 +17,8 @@ public class ScrollingAround_Steps {
         scrollingAroundPage.hoverElement(element);
     }
 
-    @Then("The the correct text will be displayed for all elements")
-    public void the_correct_text_will_be_displayed_for_all_elements() {
+    @Then("The correct text will be displayed for all elements")
+    public void theCorrectTextWillBeDisplayedForAllElements() {
         scrollingAroundPage.verifyDisplayedTextForAllElements();
     }
 }

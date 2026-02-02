@@ -11,4 +11,4 @@ Feature: WebdriverUniversity.com - Actions Page
     And Hover on the right element
     And Hover on the left element
     And Hover on the bottom element
-    Then The the correct text will be displayed for all elements
+    Then The correct text will be displayed for all elements

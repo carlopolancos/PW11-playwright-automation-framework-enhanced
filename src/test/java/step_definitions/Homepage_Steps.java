@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.HomePage;
@@ -65,5 +66,10 @@ public class Homepage_Steps {
     @When("I click on the scrolling around link")
     public void i_click_on_the_scrolling_around_link() {
         homePage.clickScrollingAroundLink();
+    }
+
+    @When("I click on the popup and alerts link")
+    public void iClickOnThePopupAndAlertsLink() {
+        homePage.clickPopupAndAlertsLink();
     }
 }

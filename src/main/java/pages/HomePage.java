@@ -60,4 +60,8 @@ public class HomePage extends BasePage {
     public void clickScrollingAroundLink() {
         clickAndOpenNewPage("SCROLLING AROUND Scrolling Around...");
     }
+
+    public void clickPopupAndAlertsLink() {
+        clickAndOpenNewPage("POPUP & ALERTS Close those annoying");
+    }
 }

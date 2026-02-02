@@ -36,6 +36,7 @@ import java.util.logging.XMLFormatter;
 //        tags = "@ajax-loader and not @ignore",
 //        tags = "@actions and not @ignore",
 //        tags = "@scrolling-around and not @ignore",
+//        tags = "@popup-and-alerts and not @ignore",
         plugin = {"pretty", "json:target/cucumber.json",
         "html:target/cucumber-report.html"}
 )
