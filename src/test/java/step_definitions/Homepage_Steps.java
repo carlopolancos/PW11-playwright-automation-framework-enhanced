@@ -92,4 +92,9 @@ public class Homepage_Steps {
     public void iClickOnTheAutocompleteLink() {
         homePage.clickAutocompleteLink();
     }
+
+    @When("I click on the file upload link")
+    public void iClickOnTheFileUploadLink() {
+        homePage.clickFileUploadLink();
+    }
 }

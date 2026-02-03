@@ -80,4 +80,8 @@ public class HomePage extends BasePage {
     public void clickAutocompleteLink() {
         clickAndOpenNewPage("AUTOCOMPLETE TEXTFIELD");
     }
+
+    public void clickFileUploadLink() {
+        clickAndOpenNewPage("FILE UPLOAD");
+    }
 }
