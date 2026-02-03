@@ -40,6 +40,7 @@ import java.util.logging.XMLFormatter;
 //        tags = "@iframe and not @ignore",
 //        tags = "@hidden-elements and not @ignore",
 //        tags = "@data-table and @smoke and not @ignore",
+//        tags = "@autocomplete and @smoke and not @ignore",
         plugin = {"pretty", "json:target/cucumber.json",
         "html:target/cucumber-report.html"}
 )

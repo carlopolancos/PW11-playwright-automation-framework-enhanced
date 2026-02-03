@@ -76,4 +76,8 @@ public class HomePage extends BasePage {
     public void clickDataTableLink() {
         clickAndOpenNewPage("DATA, TABLES & BUTTON STATES");
     }
+
+    public void clickAutocompleteLink() {
+        clickAndOpenNewPage("AUTOCOMPLETE TEXTFIELD");
+    }
 }

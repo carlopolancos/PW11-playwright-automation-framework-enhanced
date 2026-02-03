@@ -87,4 +87,9 @@ public class Homepage_Steps {
     public void iClickOnTheDataTableLink() {
         homePage.clickDataTableLink();
     }
+
+    @When("I click on the autocomplete link")
+    public void iClickOnTheAutocompleteLink() {
+        homePage.clickAutocompleteLink();
+    }
 }
