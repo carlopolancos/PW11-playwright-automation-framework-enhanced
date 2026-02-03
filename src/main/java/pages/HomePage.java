@@ -84,4 +84,8 @@ public class HomePage extends BasePage {
     public void clickFileUploadLink() {
         clickAndOpenNewPage("FILE UPLOAD");
     }
+
+    public void clickDatepickerLink() {
+        clickAndOpenNewPage("DATEPICKER Datepicker");
+    }
 }

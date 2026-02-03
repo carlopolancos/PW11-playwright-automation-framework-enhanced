@@ -42,6 +42,7 @@ import java.util.logging.XMLFormatter;
 //        tags = "@data-table and @smoke and not @ignore",
 //        tags = "@autocomplete and @smoke and not @ignore",
 //        tags = "@file-upload and @smoke and not @ignore",
+//        tags = "@datepicker and @smoke and not @ignore",
         plugin = {"pretty", "json:target/cucumber.json",
         "html:target/cucumber-report.html"}
 )

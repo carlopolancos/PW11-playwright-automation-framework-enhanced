@@ -97,4 +97,9 @@ public class Homepage_Steps {
     public void iClickOnTheFileUploadLink() {
         homePage.clickFileUploadLink();
     }
+
+    @When("I click on the datepicker link")
+    public void iClickOnTheDatepickerLink() {
+        homePage.clickDatepickerLink();
+    }
 }
