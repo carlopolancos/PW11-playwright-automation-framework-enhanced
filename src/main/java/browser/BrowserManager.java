@@ -88,9 +88,6 @@ public class BrowserManager {
             page.set(browserContext.get().newPage());
             page.get().setDefaultNavigationTimeout(navigationTimeout);
             page.get().setDefaultTimeout(actionTimeout);
-            page.get().onConsoleMessage(msg -> {
-                System.out.println("BROWSER LOG: " + msg.text());
-            });
             logger.info("Playwright setup complete");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Failed to setup Playwright!", e);

@@ -1,4 +1,4 @@
-@regression @choice @smoke
+@regression @choice
 Feature: WebdriverUniversity.com - Choice Page
 
   Background: Pre Conditions
@@ -18,16 +18,19 @@ Feature: WebdriverUniversity.com - Choice Page
       | 2        | Eclipse      | TestNG   |
       | 3        | HTML         | JQuery   |
 
+  @smoke
   Scenario: Verify Checkbox Selection Function
     And Only checkbox 3 is initially checked
     And I click all checkboxes
     Then Only checkbox 3 is unchecked
 
+  @smoke
   Scenario: Verify Radiobutton Selection Function
     And No radiobutton is initially checked
     And I click all radiobuttons
     Then Only radiobutton purple is checked
 
+  @smoke
   Scenario: Verify Disabled Selection Function
     And Radiobutton pumpkin is selected and grape is selected from dropdown
     And I try to select other radiobutton and select option

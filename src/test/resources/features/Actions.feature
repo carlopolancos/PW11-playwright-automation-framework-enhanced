@@ -5,10 +5,12 @@ Feature: WebdriverUniversity.com - Actions Page
     Given I navigate to the webdriveruniversity homepage
     When I click on the actions link
 
+  @smoke
   Scenario: Verify Element Drag Function
     And Drag the draggable element to the target
     Then The target will have the correct content Dropped!
 
+  @smoke
   Scenario: Verify Double Click Function
     And Double click on the element
     Then The target will have a new class double
@@ -26,6 +28,7 @@ Feature: WebdriverUniversity.com - Actions Page
       | 3            | > div > a:nth-child(1) |
       | 3            | > div > a:nth-child(2) |
 
+  @smoke
   Scenario: Verify Clicking Hold Function
     And Hold click on the element
     Then Element will have text "Well done! keep holding that click now....." while clicked

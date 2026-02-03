@@ -4,11 +4,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AccordionPage;
 
-public class AccordioSteps {
+public class AccordionSteps {
 
     private final AccordionPage accordionPage;
 
-    public AccordioSteps(AccordionPage accordionPage) {
+    public AccordionSteps(AccordionPage accordionPage) {
         this.accordionPage = accordionPage;
     }
 

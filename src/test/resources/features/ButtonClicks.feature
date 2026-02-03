@@ -17,6 +17,7 @@ Feature: WebdriverUniversity.com - Button Clicks Page
       | CLICK ME!!  | It’s that Easy!!  Well I think it is.....                  |
       | CLICK ME!!! | Well done! the Action Move & Click can become very useful! |
 
+  @smoke
   Scenario Outline: Verify Button Clicks using Playwright, CSS, or XPath
     And I click the button '<button>' using <method>
     Then I should be presented with a modal which contains text '<modalHeader>'

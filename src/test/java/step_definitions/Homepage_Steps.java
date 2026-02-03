@@ -82,4 +82,9 @@ public class Homepage_Steps {
     public void iClickOnTheHiddenElementsLink() {
         homePage.clickHiddenElementsLink();
     }
+
+    @When("I click on the data table link")
+    public void iClickOnTheDataTableLink() {
+        homePage.clickDataTableLink();
+    }
 }

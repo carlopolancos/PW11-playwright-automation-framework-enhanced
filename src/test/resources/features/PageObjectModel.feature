@@ -1,4 +1,4 @@
-@regression @page-object-model @smoke
+@regression @page-object-model
 Feature: WebdriverUniversity.com - PageObjectModel Page
 
   Background: Pre Conditions
@@ -24,6 +24,7 @@ Feature: WebdriverUniversity.com - PageObjectModel Page
       | Our Products | Desktop Systems | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |
       | Our Products | Audio           | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |
 
+  @smoke
   Scenario: Verify Contact Us Tab
     And I click the tab 'Contact Us'
     Then I am redirected to Contact Us page

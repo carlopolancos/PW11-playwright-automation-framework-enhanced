@@ -72,4 +72,8 @@ public class HomePage extends BasePage {
     public void clickHiddenElementsLink() {
         clickAndOpenNewPage("HIDDEN ELEMENTS Reveal and interact with hidden items");
     }
+
+    public void clickDataTableLink() {
+        clickAndOpenNewPage("DATA, TABLES & BUTTON STATES");
+    }
 }

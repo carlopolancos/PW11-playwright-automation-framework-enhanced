@@ -1,4 +1,4 @@
-@regression @iframe @smoke
+@regression @iframe
 Feature: WebdriverUniversity.com - Iframe Page
 
   Background: Pre Conditions
@@ -24,6 +24,7 @@ Feature: WebdriverUniversity.com - Iframe Page
       | Our Products | Desktop Systems | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |
       | Our Products | Audio           | SPECIAL OFFER! - GET 30% OFF YOUR FIRST ORDER AT WEBDRIVERUNIVERSITY.COM |
 
+  @smoke
   Scenario: Verify Contact Us Tab
     And On the iframe, i click the tab 'Contact Us'
     Then On the iframe, i am redirected to Contact Us page
